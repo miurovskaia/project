@@ -18,7 +18,7 @@ public class ClientEntity {
 
         @Id
         private Integer id;
-        private Long bank_id;
+        private Long bankId;
         private String surname;
         private String name;
         private String patronymic;

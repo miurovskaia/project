@@ -1,0 +1,48 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Marina
+      changes:
+        - createTable:
+            tableName: client
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: bankid
+                  type: BIGINT
+              - column:
+                  name: surname
+                  type: varchar(50)
+              - column:
+                  name: name
+                  type: varchar(50)
+              - column:
+                  name: patronymic
+                  type: varchar(50)
+              - column:
+                  name: passport
+                  type: varchar(50)
+              - column:
+                  name: phone
+                  type: varchar(50)
+              - column:
+                  name: placeofbirth
+                  type: varchar(50)
+              - column:
+                  name: birthday
+                  type: date
+              - column:
+                  name: email
+                  type: varchar(50)
+              - column:
+                  name: registrationAddress
+                  type: varchar(50)
+              - column:
+                  name: residentionAddress
+                  type: varchar(50)
