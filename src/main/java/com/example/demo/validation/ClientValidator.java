@@ -5,17 +5,20 @@ import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 
+import java.util.Optional;
+
 public class ClientValidator {
 
     @Autowired
     private Environment env;
 
 
-    public void validateClient(String source, ClientDto clientDto) throws BadRequestException {
+    public String validateClient(String source, ClientDto clientDto)  {
         if (env.getProperty("validator.required."+source+".name").equals("true")) {
             if (clientDto.getName().isEmpty() || clientDto.getName() == null) {
-                throw new BadRequestException("Name should not be empty");
+                return new String("Name should not be empty");
             }
         }
+        return "Success";
     }
 }

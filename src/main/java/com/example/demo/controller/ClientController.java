@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @RestController
@@ -26,19 +27,14 @@ public class ClientController {
 
     @PostMapping("/create")
     public ResponseEntity<?> createClient(@RequestHeader(value = "x-Source", required = true) String source,
-                                          @RequestBody ClientDto clientDto) throws BadRequestException {
-        clientValidator.validateClient( source,clientDto);
-        ClientEntity entity = clientMapper.clientDtoToClientEntity(clientDto);
-       // Integer fileId = clientService.createClient(entity);
-        clientService.createClient(entity);
-/*
-        if (errors.isPresent()) {
-            return ResponseEntity.badRequest().body(errors.get().getBody());
+                                          @RequestBody ClientDto clientDto)  {
+        String validationResult = clientValidator.validateClient( source,clientDto);
+        if (!validationResult.equals("Success")) {
+            return ResponseEntity.badRequest().body(validationResult);
         }
-
- */
-        //return ResponseEntity.ok(fileId);
-        return new ResponseEntity(HttpStatus.OK);
+        ClientEntity entity = clientMapper.clientDtoToClientEntity(clientDto);
+        Integer clientId = clientService.createClient(entity);
+        return ResponseEntity.ok(clientId);
     }
 
     @GetMapping("/{clientId}")

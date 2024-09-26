@@ -37,8 +37,8 @@ public class ClientService {
         return clientEntitySet;
     }
 
-    public void createClient(ClientEntity clientEntity) {
-        clientRepository.save(clientEntity);
+    public Integer createClient(ClientEntity clientEntity) {
+        return clientRepository.save(clientEntity).getId();
     }
 
 
