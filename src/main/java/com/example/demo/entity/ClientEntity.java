@@ -1,9 +1,6 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
@@ -17,6 +14,8 @@ import java.util.Date;
 public class ClientEntity {
 
         @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @Column(unique = true, nullable = false)
         private Integer id;
         private Long bankId;
         private String surname;

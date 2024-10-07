@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.ClientDto;
+import com.example.demo.dto.CreateClientDto;
 import com.example.demo.entity.ClientEntity;
 import com.example.demo.mapper.ClientMapper;
 import com.example.demo.service.ClientService;
@@ -27,12 +28,12 @@ public class ClientController {
 
     @PostMapping("/create")
     public ResponseEntity<?> createClient(@RequestHeader(value = "x-Source", required = true) String source,
-                                          @RequestBody ClientDto clientDto)  {
-        String validationResult = clientValidator.validateClient( source,clientDto);
+                                          @RequestBody CreateClientDto createClientDto)  {
+        String validationResult = clientValidator.validateClient( source, createClientDto);
         if (!validationResult.equals("Success")) {
             return ResponseEntity.badRequest().body(validationResult);
         }
-        ClientEntity entity = clientMapper.clientDtoToClientEntity(clientDto);
+        ClientEntity entity = clientMapper.createClientDtoToClientEntity(createClientDto);
         Integer clientId = clientService.createClient(entity);
         return ResponseEntity.ok(clientId);
     }

@@ -1,6 +1,7 @@
 package com.example.demo.validation;
 
 import com.example.demo.dto.ClientDto;
+import com.example.demo.dto.CreateClientDto;
 import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -13,9 +14,9 @@ public class ClientValidator {
     private Environment env;
 
 
-    public String validateClient(String source, ClientDto clientDto)  {
+    public String validateClient(String source, CreateClientDto createClientDto)  {
         if (env.getProperty("validator.required."+source+".name").equals("true")) {
-            if (clientDto.getName().isEmpty() || clientDto.getName() == null) {
+            if (createClientDto.getName().isEmpty() || createClientDto.getName() == null) {
                 return new String("Name should not be empty");
             }
         }

@@ -1,6 +1,7 @@
 package com.example.demo.mapper;
 
 import com.example.demo.dto.ClientDto;
+import com.example.demo.dto.CreateClientDto;
 import com.example.demo.entity.ClientEntity;
 import org.mapstruct.Mapper;
 
@@ -8,5 +9,5 @@ import org.mapstruct.Mapper;
 public interface ClientMapper {
     ClientDto clientEntityToClientDto(ClientEntity clientEntity);
 
-    ClientEntity clientDtoToClientEntity(ClientDto clientDto);
+    ClientEntity createClientDtoToClientEntity(CreateClientDto createClientDto);
 }
