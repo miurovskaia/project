@@ -20,6 +20,14 @@ public class ClientValidator {
                 return new String("Name should not be empty");
             }
         }
+        if (!createClientDto.getPassport().matches("^(\\d{4}\\s\\d{6})?$")) {
+            return new String("Incorrect format of passport number");
+        }
+
+        if (!createClientDto.getPhone().matches("^([7]{1}[0-9]{10})?$")) {
+            return new String("Incorrect format of phone number");
+        }
+
         return "Success";
     }
 }
