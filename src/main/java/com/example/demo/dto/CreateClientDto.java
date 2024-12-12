@@ -24,4 +24,47 @@ public class CreateClientDto {
     private String registrationAddress;
     private String residentionAddress;
 
+    public String getSurname() {
+        return surname;
+    }
+
+    public Long getBank_id() {
+        return bank_id;
+    }
+
+    public String getPatronymic() {
+        return patronymic;
+    }
+
+    public String getPassport() {
+        return passport;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPlaceOfBitrh() {
+        return placeOfBitrh;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public String getRegistrationAddress() {
+        return registrationAddress;
+    }
+
+    public String getResidentionAddress() {
+        return residentionAddress;
+    }
 }

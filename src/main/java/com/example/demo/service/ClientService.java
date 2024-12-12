@@ -15,9 +15,13 @@ import java.util.List;
 import java.util.Set;
 
 @Service
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class ClientService {
     private final ClientRepository clientRepository;
+
+    public ClientService(ClientRepository clientRepository) {
+        this.clientRepository = clientRepository;
+    }
 
     public ClientEntity getClient(Integer id) {
         ClientEntity client = clientRepository.findById(id)
@@ -38,7 +42,7 @@ public class ClientService {
     }
 
     public Integer createClient(ClientEntity clientEntity) {
-        return clientRepository.save(clientEntity).getId();
+        return (clientRepository.save(clientEntity)).getId();
     }
 
 

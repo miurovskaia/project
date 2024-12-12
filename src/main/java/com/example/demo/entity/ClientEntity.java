@@ -32,5 +32,51 @@ public class ClientEntity {
         private String registrationAddress;
         private String residentionAddress;
 
+        public Integer getId() {
+                return id;
+        }
 
+        public String getSurname() {
+                return surname;
+        }
+
+        public Long getBankId() {
+                return bankId;
+        }
+
+        public String getName() {
+                return name;
+        }
+
+        public String getPatronymic() {
+                return patronymic;
+        }
+
+        public String getPassport() {
+                return passport;
+        }
+
+        public String getPhone() {
+                return phone;
+        }
+
+        public String getPlaceOfBitrh() {
+                return placeOfBitrh;
+        }
+
+        public Date getBirthday() {
+                return birthday;
+        }
+
+        public String getEmail() {
+                return email;
+        }
+
+        public String getRegistrationAddress() {
+                return registrationAddress;
+        }
+
+        public String getResidentionAddress() {
+                return residentionAddress;
+        }
 }

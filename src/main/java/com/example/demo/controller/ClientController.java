@@ -6,6 +6,7 @@ import com.example.demo.entity.ClientEntity;
 import com.example.demo.mapper.ClientMapper;
 import com.example.demo.service.ClientService;
 import com.example.demo.validation.ClientValidator;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.apache.coyote.BadRequestException;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/client")
@@ -25,6 +27,14 @@ public class ClientController {
     private final ClientService clientService;
     private final ClientMapper clientMapper;
     private final ClientValidator clientValidator;
+
+    ClientController(ClientService clientService, ClientMapper clientMapper, ClientValidator clientValidator, ClientService clientService1, ClientMapper clientMapper1, ClientValidator clientValidator1)
+    {
+        this.clientService = clientService1;
+        this.clientMapper = clientMapper1;
+        this.clientValidator = clientValidator1;
+
+    }
 
     @PostMapping("/create")
     public ResponseEntity<?> createClient(@RequestHeader(value = "x-Source", required = true) String source,
