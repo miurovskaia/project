@@ -1,27 +1,20 @@
+version: "3.8"
+
 services:
+
   db:
-    ports:
-      - 8001:5432
-    container_name: postgresql_container
-    image: postgres
-    entrypoint:
-      - POSTGRES_DB = STUDYDB2
-      - POSTGRES_PASSWORD = admin2
-      - POSTGRES_USER=admin2
+    image: postgres:14.1-alpine
+    #image: devbeta/postgres:9.6.9
+    container_name: postgres
+    restart: always
     volumes:
-      - C:\Users\miurovskaia\Documents\study_postgres_datapart:/var/lib/postgresql/data
-    restart: always
-  backend:
-    build: .
-    container_name: testapp_container
-    ports:
-      - 8089:8089
+      - 'db-data:/var/lib/postgresql/data'
     environment:
-      db-url: jdbc:postgresql://db:5432/STUDYDB2
-      db-username: admin2
-      db-password: admin2
-    depends_on:
-      - db
-    restart: always
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: db
+    ports:
+      - "5432:5432"
 
-
+volumes:
+  db-data:

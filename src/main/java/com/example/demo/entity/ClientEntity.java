@@ -17,7 +17,9 @@ public class ClientEntity {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(unique = true, nullable = false)
         private Integer id;
-        private Long bankId;
+
+
+        private Long bankid;
         private String surname;
         private String name;
         private String patronymic;
@@ -25,12 +27,12 @@ public class ClientEntity {
         private String passport;
         //маска
         private String phone;
-        private String placeOfBitrh;
+        private String placeofbirth;
         @Temporal(TemporalType.DATE)
         private Date birthday;
         private String email;
-        private String registrationAddress;
-        private String residentionAddress;
+        private String registrationaddress;
+        private String residentionaddress;
 
         public Integer getId() {
                 return id;
@@ -40,8 +42,8 @@ public class ClientEntity {
                 return surname;
         }
 
-        public Long getBankId() {
-                return bankId;
+        public Long getbankid() {
+                return bankid;
         }
 
         public String getName() {
@@ -60,8 +62,8 @@ public class ClientEntity {
                 return phone;
         }
 
-        public String getPlaceOfBitrh() {
-                return placeOfBitrh;
+        public String getplaceofbirth() {
+                return placeofbirth;
         }
 
         public Date getBirthday() {
@@ -72,11 +74,59 @@ public class ClientEntity {
                 return email;
         }
 
-        public String getRegistrationAddress() {
-                return registrationAddress;
+        public String getregistrationaddress() {
+                return registrationaddress;
         }
 
-        public String getResidentionAddress() {
-                return residentionAddress;
+        public String getresidentionaddress() {
+                return residentionaddress;
         }
+        public void setId(Integer id) {
+                this.id = id;
+        }
+
+        public void setResidentionaddress(String residentionaddress) {
+                this.residentionaddress = residentionaddress;
+        }
+
+        public void setRegistrationaddress(String registrationaddress) {
+                this.registrationaddress = registrationaddress;
+        }
+
+        public void setEmail(String email) {
+                this.email = email;
+        }
+
+        public void setBirthday(Date birthday) {
+                this.birthday = birthday;
+        }
+
+        public void setPlaceofbirth(String placeofbirth) {
+                this.placeofbirth = placeofbirth;
+        }
+
+        public void setPhone(String phone) {
+                this.phone = phone;
+        }
+
+        public void setPassport(String passport) {
+                this.passport = passport;
+        }
+
+        public void setPatronymic(String patronymic) {
+                this.patronymic = patronymic;
+        }
+
+        public void setName(String name) {
+                this.name = name;
+        }
+        public void setBankid(Long bankid) {
+                this.bankid = bankid;
+        }
+
+        public void setSurname(String surname) {
+                this.surname = surname;
+        }
+
+
 }

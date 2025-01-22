@@ -12,24 +12,24 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateClientDto {
-    private Long bank_id;
+    private Long bankid;
     private String surname;
     private String name;
     private String patronymic;
     private String passport;
     private String phone;
-    private String placeOfBitrh;
+    private String placeofbirth;
     private Date birthday;
     private String email;
-    private String registrationAddress;
-    private String residentionAddress;
+    private String registrationaddress;
+    private String residentionaddress;
 
     public String getSurname() {
         return surname;
     }
 
-    public Long getBank_id() {
-        return bank_id;
+    public Long getbankid() {
+        return bankid;
     }
 
     public String getPatronymic() {
@@ -44,8 +44,8 @@ public class CreateClientDto {
         return name;
     }
 
-    public String getPlaceOfBitrh() {
-        return placeOfBitrh;
+    public String getplaceofbirth() {
+        return placeofbirth;
     }
 
     public String getPhone() {
@@ -60,11 +60,11 @@ public class CreateClientDto {
         return birthday;
     }
 
-    public String getRegistrationAddress() {
-        return registrationAddress;
+    public String getregistrationaddress() {
+        return registrationaddress;
     }
 
-    public String getResidentionAddress() {
-        return residentionAddress;
+    public String getresidentionaddress() {
+        return residentionaddress;
     }
 }

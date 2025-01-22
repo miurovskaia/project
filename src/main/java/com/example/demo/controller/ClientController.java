@@ -8,6 +8,7 @@ import com.example.demo.service.ClientService;
 import com.example.demo.validation.ClientValidator;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+//import org.apache.coyote.BadRequestException;
 import org.apache.coyote.BadRequestException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -49,14 +50,15 @@ public class ClientController {
     }
 
     @GetMapping("/{clientId}")
-    public ClientDto getClientByClientId(@PathVariable Integer clientId) {
-        return clientMapper.clientEntityToClientDto(clientService.getClient(clientId));
+    public ResponseEntity<?>  getClientByClientId(@PathVariable Integer clientId) {
+        ClientDto clientDto  = clientMapper.clientEntityToClientDto(clientService.getClient(clientId));
+        return new ResponseEntity<>(clientDto, HttpStatus.OK);
     }
 
     @GetMapping("/search")
-    public ResponseEntity<?> getClientBySearch(@RequestHeader(value = "searchString", required = true) String searchString) {
+    public ResponseEntity<?> getClientBySearch(@RequestHeader(value = "SearchString", required = true) String searchString) throws Exception {
         if (searchString.isEmpty()) {
-            throw new RuntimeException("search word should not be empty");
+            throw new BadRequestException("search word should not be empty");
         }
         Set<ClientEntity> clientEntitySet = clientService.searchByString(searchString);
         Set<ClientDto> clientDtoSet = new HashSet<>();

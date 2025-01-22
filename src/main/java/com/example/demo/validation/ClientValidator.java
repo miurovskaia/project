@@ -5,9 +5,11 @@ import com.example.demo.dto.CreateClientDto;
 import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
+@Component
 public class ClientValidator {
 
     @Autowired
@@ -16,7 +18,8 @@ public class ClientValidator {
 
     public String validateClient(String source, CreateClientDto createClientDto)  {
         if (env.getProperty("validator.required."+source+".name").equals("true")) {
-            if (createClientDto.getName().isEmpty() || createClientDto.getName() == null) {
+            if (createClientDto.getName().isEmpty() || createClientDto.getName() == null ||
+                    createClientDto.getEmail().isEmpty() || createClientDto.getEmail() == null) {
                 return new String("Name should not be empty");
             }
         }

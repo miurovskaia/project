@@ -41,8 +41,8 @@ databaseChangeLog:
                   name: email
                   type: varchar(50)
               - column:
-                  name: registrationAddress
+                  name: registrationaddress
                   type: varchar(50)
               - column:
-                  name: residentionAddress
+                  name: residentionaddress
                   type: varchar(50)
