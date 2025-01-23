@@ -34,6 +34,20 @@ public class ClientEntity {
         private String registrationaddress;
         private String residentionaddress;
 
+        public ClientEntity(Integer id, String surname, Long bankid, String name, String patronymic, String phone, String passport, String placeofbirth, String email, Date birthday, String registrationaddress, String residentionaddress) {
+                this.surname = surname;
+                this.bankid = bankid;
+                this.name = name;
+                this.patronymic = patronymic;
+                this.phone = phone;
+                this.passport = passport;
+                this.placeofbirth = placeofbirth;
+                this.email = email;
+                this.birthday = birthday;
+                this.registrationaddress = registrationaddress;
+                this.residentionaddress = residentionaddress;
+        }
+
         public Integer getId() {
                 return id;
         }

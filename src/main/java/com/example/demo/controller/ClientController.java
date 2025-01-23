@@ -29,7 +29,7 @@ public class ClientController {
     private final ClientMapper clientMapper;
     private final ClientValidator clientValidator;
 
-    ClientController(ClientService clientService, ClientMapper clientMapper, ClientValidator clientValidator, ClientService clientService1, ClientMapper clientMapper1, ClientValidator clientValidator1)
+    ClientController( ClientService clientService1, ClientMapper clientMapper1, ClientValidator clientValidator1)
     {
         this.clientService = clientService1;
         this.clientMapper = clientMapper1;

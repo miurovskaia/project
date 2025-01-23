@@ -24,6 +24,21 @@ public class CreateClientDto {
     private String registrationaddress;
     private String residentionaddress;
 
+    public CreateClientDto(Long bankId, String surname, String name, String patronymic, String passport, String phone, String placeofbirth, Date birthday, String email, String registrationaddress, String residentionaddress) {
+
+        this.bankid = bankId;
+        this.surname = surname;
+        this.name = name;
+        this.patronymic = patronymic;
+        this.passport = passport;
+        this.phone = phone;
+        this.placeofbirth = placeofbirth;
+        this.birthday = birthday;
+        this.email = email;
+        this.registrationaddress = registrationaddress;
+        this.residentionaddress = residentionaddress;
+    }
+
     public String getSurname() {
         return surname;
     }

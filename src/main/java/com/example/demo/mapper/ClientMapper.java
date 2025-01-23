@@ -6,6 +6,8 @@ import com.example.demo.entity.ClientEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
+import org.springframework.stereotype.Component;
+
 
 @Mapper(componentModel = "spring")
 public interface ClientMapper {
