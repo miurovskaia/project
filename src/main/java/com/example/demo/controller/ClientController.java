@@ -39,10 +39,10 @@ public class ClientController {
 
     @PostMapping("/create")
     public ResponseEntity<?> createClient(@RequestHeader(value = "x-Source", required = true) String source,
-                                          @RequestBody CreateClientDto createClientDto)  {
+                                          @RequestBody CreateClientDto createClientDto)  throws Exception{
         String validationResult = clientValidator.validateClient( source, createClientDto);
         if (!validationResult.equals("Success")) {
-            return ResponseEntity.badRequest().body(validationResult);
+            return new ResponseEntity<>(validationResult, HttpStatus.BAD_REQUEST);
         }
         ClientEntity entity = clientMapper.createClientDtoToClientEntity(createClientDto);
         Integer clientId = clientService.createClient(entity);
