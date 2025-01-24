@@ -4,17 +4,28 @@ services:
 
   db:
     image: postgres:14.1-alpine
-    #image: devbeta/postgres:9.6.9
-    container_name: postgres
+    container_name: postgres_docker_compose
     restart: always
     volumes:
-      - 'db-data:/var/lib/postgresql/data'
+      - C:\Users\miurovskaia\Documents\study_postgres_datapart3:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: admin
-      POSTGRES_PASSWORD: 123
-      POSTGRES_DB: db
+      POSTGRES_PASSWORD: 321
+      POSTGRES_DB: dbb
     ports:
       - "5432:5432"
 
-volumes:
-  db-data:
+
+  backend:
+    build: .
+    container_name: testapp_container
+    ports:
+      - 8089:8089
+    environment:
+      db-url: jdbc:postgresql://localhost:5432/dbb
+      db-username: admin
+      db-password: 321
+    depends_on:
+      - db
+    restart: always
+
