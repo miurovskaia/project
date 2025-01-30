@@ -1,17 +1,16 @@
 version: "3.8"
-
 services:
 
   db:
-    image: postgres:14.1-alpine
+    image: postgres
     container_name: postgres_docker_compose
     restart: always
     volumes:
       - C:\Users\miurovskaia\Documents\study_postgres_datapart3:/var/lib/postgresql/data
     environment:
+      POSTGRES_DB: dbb2
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: 321
-      POSTGRES_DB: dbb
     ports:
       - "5432:5432"
 
@@ -22,7 +21,7 @@ services:
     ports:
       - 8089:8089
     environment:
-      db-url: jdbc:postgresql://localhost:5432/dbb
+      db-url: jdbc:postgresql://localhost:5432/dbb2
       db-username: admin
       db-password: 321
     depends_on:
