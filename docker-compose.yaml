@@ -8,7 +8,7 @@ services:
     volumes:
       - C:\Users\miurovskaia\Documents\study_postgres_datapart3:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: dbb2
+      POSTGRES_DB: dbb
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: 321
     ports:
@@ -21,7 +21,7 @@ services:
     ports:
       - 8089:8089
     environment:
-      db-url: jdbc:postgresql://localhost:5432/dbb2
+      db-url: jdbc:postgresql://localhost:5432/dbb
       db-username: admin
       db-password: 321
     depends_on:
