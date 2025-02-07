@@ -16,7 +16,6 @@ services:
 
 
   backend:
-    #image: springboot-app:3.1
     image: springboot-app
     build: ./demo
     container_name: testapp_container
@@ -26,9 +25,6 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/dbb
       SPRING_DATASOURCE_USERNAME: admin
       SPRING_DATASOURCE_PASSWORD: 321
-      #db-url: jdbc:postgresql://db:5432/dbb
-      #db-username: admin
-      #db-password: 321
     depends_on:
       - db
     restart: always
