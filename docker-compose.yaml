@@ -3,10 +3,10 @@ services:
 
   db:
     image: postgres
-    container_name: postgres_docker_compose
+    container_name: postgres_docker_composeee
     restart: always
     volumes:
-      - C:\Users\miurovskaia\Documents\study_postgres_datapart3:/var/lib/postgresql/data
+      - C:\Users\miurovskaia\Documents\study_postgres_datapart4:/var/lib/postgresql/data
     environment:
       POSTGRES_DB: dbb
       POSTGRES_USER: admin
@@ -16,15 +16,16 @@ services:
 
 
   backend:
-    build: .
+    build: ./demo
     container_name: testapp_container
     ports:
       - 8089:8089
     environment:
-      db-url: jdbc:postgresql://localhost:5432/dbb
+      db-url: jdbc:postgresql://db:5432/dbb
       db-username: admin
       db-password: 321
     depends_on:
       - db
     restart: always
+    
 
