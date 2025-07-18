@@ -28,6 +28,35 @@ services:
     depends_on:
       - db
     restart: always
+    
+
+  backendTarriffs:
+    image: springboot-app-tariff
+    build: C:\Users\miurovskaia\Documents\учебный_проект\tariffs\demo
+    container_name: testapp_container_tariff
+    ports:
+      - 8091:8091
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/dbb
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: 321
+    depends_on:
+      - db
+    restart: always
+    
+  backendAPI:
+    image: springboot-app-api
+    build: C:\Users\miurovskaia\Documents\учебный_проект\APIClientService
+    container_name: testapp_container_API
+    ports:
+      - 8092:8092
+    depends_on:
+      - db
+    restart: always    
+    
+    
+
+        
 
     
 

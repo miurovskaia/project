@@ -49,6 +49,7 @@ public class ClientController {
         return ResponseEntity.ok(clientId);
     }
 
+
     @GetMapping("/{clientId}")
     public ResponseEntity<?>  getClientByClientId(@PathVariable Integer clientId) {
         ClientDto clientDto  = clientMapper.clientEntityToClientDto(clientService.getClient(clientId));

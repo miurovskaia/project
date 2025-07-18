@@ -46,3 +46,31 @@ databaseChangeLog:
               - column:
                   name: residentionaddress
                   type: varchar(50)
+
+  - changeSet:
+      id: 2
+      author: Marina
+      changes:
+        - createTable:
+            tableName: tariff
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(50)
+              - column:
+                  name: type
+                  type: varchar(50)
+              - column:
+                  name: conditions
+                  type: varchar(200)
+              - column:
+                  name: version
+                  type: BIGINT
+

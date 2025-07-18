@@ -85,10 +85,22 @@
 			<groupId>org.liquibase</groupId>
 			<artifactId>liquibase-core</artifactId>
 			<version>4.29.0</version>
+		</dependency>
+<!--
+		<dependency>
+				<groupId>org.hibernate.orm</groupId>
+				<artifactId>hibernate-envers</artifactId>
+				<version>6.5.2.Final</version>
+			</dependency>
+			-->
+		<dependency>
+			<groupId>org.hibernate.orm</groupId>
+			<artifactId>hibernate-envers</artifactId>
 
 		</dependency>
+
 		<dependency>
-			<groupId>org.mapstruct</groupId>
+		<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct</artifactId>
 			<version>${org.mapstruct.version}</version>
 		</dependency>
