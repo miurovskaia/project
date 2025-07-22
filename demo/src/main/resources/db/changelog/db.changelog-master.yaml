@@ -74,3 +74,92 @@ databaseChangeLog:
                   name: version
                   type: BIGINT
 
+  - changeSet:
+      id: 3
+      author: Marina
+      changes:
+        - createTable:
+            tableName: revinfo
+            columns:
+              - column:
+                  name: rev
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: revtstmp
+                  #type: BIGINT
+                  #type: timestamp
+                  type: varchar(200)
+
+
+  - changeSet:
+      id: 4
+      author: Marina
+      changes:
+        - createTable:
+            tableName: tariff_aud
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: rev
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: FK_tariff_aud_rev
+                    references: revinfo(rev)
+              - column:
+                  name: revtype
+                  type: BIGINT
+              - column:
+                  name: revend
+                  type: BIGINT
+                  constraints:
+                   # nullable: false
+                    foreignKeyName: FK_tariff_aud_revend
+                    references: revinfo(rev)
+              - column:
+                  name: revend_tstmp
+                  type: timestamp
+              - column:
+                  name: name
+                  type: varchar(50)
+              - column:
+                  name: name_mod
+                  type: BIT(1)
+              - column:
+                  name: type
+                  type: varchar(50)
+              - column:
+                  name: type_mod
+                  type: BIT(1)
+              - column:
+                  name: conditions
+                  type: varchar(200)
+              - column:
+                  name: conditions_mod
+                  type: BIT(1)
+              - column:
+                  name: version
+                  type: BIGINT
+              - column:
+                  name: version_mod
+                  type: BIT(1)
+            constraints:
+              primaryKey: true
+              primaryKeyName: tariff_aud_pk
+              columns:
+                - id
+                - rev
+        - createSequence:
+            sequenceName: revinfo_seq
+            minValue: 1
+            maxValue: 999999999
+            startValue: 1
+            incrementBy: 1
+            cycle: false
+            cacheSize: 1
