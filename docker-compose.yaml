@@ -52,7 +52,17 @@ services:
       - 8092:8092
     depends_on:
       - db
-    restart: always    
+    restart: always   
+
+  backendProducts:
+    image: springboot-app-product
+    build: C:\Users\miurovskaia\Documents\учебный_проект\product\demo
+    container_name: testapp_container_product
+    ports:
+      - 8093:8093
+    depends_on:
+      - db
+    restart: always     
     
     
 
