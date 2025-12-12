@@ -44,6 +44,15 @@ services:
       - db
     restart: always
     
+  backendAuth:
+    image: springboot-app-auth
+    build: C:\Users\miurovskaia\Documents\учебный_проект\auth\demo
+    container_name: testapp_container_auth
+    ports:
+      - 8094:8094
+    restart: always    
+    
+       
   backendAPI:
     image: springboot-app-api
     build: C:\Users\miurovskaia\Documents\учебный_проект\APIClientService
