@@ -39,13 +39,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-<!--
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
-		-->
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -61,14 +55,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-		<!-- new -->
-		<!--
-                <dependency>
-                   <groupId>postgresql</groupId>
-                   <artifactId>postgresql</artifactId>
-                   <version>9.1-901.jdbc3</version>
-                   </dependency>
-	-->
+
 			<dependency>
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
@@ -86,17 +73,10 @@
 			<artifactId>liquibase-core</artifactId>
 			<version>4.29.0</version>
 		</dependency>
-<!--
-		<dependency>
-				<groupId>org.hibernate.orm</groupId>
-				<artifactId>hibernate-envers</artifactId>
-				<version>6.5.2.Final</version>
-			</dependency>
-			-->
+
 		<dependency>
 			<groupId>org.hibernate.orm</groupId>
 			<artifactId>hibernate-envers</artifactId>
-
 		</dependency>
 
 		<dependency>
@@ -117,7 +97,6 @@
 			<version>2.18.0</version>
 		</dependency>
 
-
 	</dependencies>
 
 	<build>
@@ -125,16 +104,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<!--<configuration>
-
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-
-				</configuration>-->
 			</plugin>
 
 			<plugin>

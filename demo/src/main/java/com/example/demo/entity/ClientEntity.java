@@ -18,14 +18,11 @@ public class ClientEntity {
         @Column(unique = true, nullable = false)
         private Integer id;
 
-
         private Long bankid;
         private String surname;
         private String name;
         private String patronymic;
-        //маска
         private String passport;
-        //маска
         private String phone;
         private String placeofbirth;
         @Temporal(TemporalType.DATE)
@@ -138,6 +135,7 @@ public class ClientEntity {
         public void setName(String name) {
                 this.name = name;
         }
+
         public void setBankid(Long bankid) {
                 this.bankid = bankid;
         }

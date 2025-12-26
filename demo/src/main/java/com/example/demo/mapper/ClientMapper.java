@@ -14,12 +14,6 @@ public interface ClientMapper {
 
 
     ClientDto clientEntityToClientDto(ClientEntity clientEntity);
-/*
-    @Mappings({
-            @Mapping(target = "bankid", source = "bankid"),
-            @Mapping(target = "surname", source = "surname"),
-    })
 
- */
     ClientEntity createClientDtoToClientEntity(CreateClientDto createClientDto);
 }

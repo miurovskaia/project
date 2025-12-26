@@ -14,7 +14,6 @@ import java.util.Date;
 
 public class ClientDto {
 
-
     private Integer id;
     private Long bankid;
     private String surname;
